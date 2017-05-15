@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,9 +16,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // получаем разрешение на получение локальных нотификаций
+        application.registerUserNotificationSettings(UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil))
+        
+        // обнуляем цифру на бейджике
+        application.applicationIconBadgeNumber = 0
+        
+        // устанавливаем главным наш SWViewController (UINavigationController)
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let navController = SWViewController()
+        window?.rootViewController = navController
+        window?.makeKeyAndVisible()
+        
         return true
     }
+    
+    // обнуляем цифру на бейджике
+    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+        application.applicationIconBadgeNumber = 0
+    }
+
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
