@@ -45,7 +45,7 @@ dsuvorov@gmail.com
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ZIU-wD-UHa" firstAttribute="top" secondItem="r7l-tC-8Mv" secondAttribute="bottom" constant="60" id="Acf-tL-WQZ"/>
                             <constraint firstItem="r7l-tC-8Mv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="10" id="Fzn-s9-qXl"/>
